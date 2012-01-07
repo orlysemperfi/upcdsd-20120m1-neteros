@@ -4,7 +4,7 @@ Proyecto definido (Nombre + Descripcion)
 
 Procesos Definidos (Diagrama + Descripcion)
 
-Historia de Alumnos (1 * integrante) 
+Historia de Alumnos (1 x integrante) 
 
 Arquitectura definida (Diagrama de componentes)
 
