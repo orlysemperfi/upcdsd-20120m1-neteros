@@ -1,0 +1,8 @@
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\bin\Debug\RppitoNet.Tests.dll.config
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\bin\Debug\RppitoNet.Tests.dll
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\bin\Debug\RppitoNet.Tests.pdb
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\bin\Debug\RppitoNet.dll
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\bin\Debug\RppitoNet.pdb
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\obj\Debug\RppitoNet.Tests.dll
+C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\obj\Debug\RppitoNet.Tests.pdb
