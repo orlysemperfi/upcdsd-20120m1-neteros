@@ -64,5 +64,11 @@ namespace RppitoNet.Controllers
             return View();
         }
 
+
+        public ActionResult Distribuir()
+        {
+            return View();
+        }
+
     }
 }
