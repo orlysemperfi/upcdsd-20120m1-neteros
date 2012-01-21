@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Editar Lista</h2>
+    <h2>Editar Listado</h2>
 
     <table>
         <tr>
@@ -50,7 +50,7 @@
             </td>
             <td>
                 <%: item.Seccion %>
-            </td>
+                o</td>
         </tr>
     
     <% } %>
