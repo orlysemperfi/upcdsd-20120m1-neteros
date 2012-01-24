@@ -35,7 +35,7 @@
                     <li><%: Html.ActionLink("Publicar Noticias", "Publicar", "Acciones")%></li>
                     <li><%: Html.ActionLink("Priorizar Noticias", "Priorizar", "Acciones")%></li>
                     <li><%: Html.ActionLink("Mapear Noticias", "Mapear", "Acciones")%></li>
-                    <li><%: Html.ActionLink("Distribuir Twitter", "Distribuir", "Acciones")%></li>
+                    <li><%: Html.ActionLink("Distribuir Twitter", "Distribuir_Lista", "Acciones")%></li>
                     <li><%: Html.ActionLink("Acerca de", "About", "Home")%></li>
                 </ul>
             
