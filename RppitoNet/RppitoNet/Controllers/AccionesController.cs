@@ -65,7 +65,13 @@ namespace RppitoNet.Controllers
         }
 
 
-        public ActionResult Distribuir()
+        public ActionResult Distribuir_Lista()
+        {
+            return View();
+        }
+
+        //public ActionResult Distribuir_Detalle(int IdNoticia)
+        public ActionResult Distribuir_Detalle()
         {
             return View();
         }
