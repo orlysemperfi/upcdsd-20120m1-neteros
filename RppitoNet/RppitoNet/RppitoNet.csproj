@@ -69,7 +69,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MapeoController.cs" />
+    <Compile Include="Controllers\NoticiasController.cs" />
     <Compile Include="Controllers\PlantillaController.cs" />
+    <Compile Include="Controllers\RecolectorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -95,6 +98,12 @@
     <Content Include="Views\Acciones\Priorizar.aspx" />
     <Content Include="Views\Acciones\Publicar.aspx" />
     <Content Include="Views\Acciones\EditarLista.aspx" />
+    <Content Include="Views\Mapeo\Index.aspx" />
+    <Content Include="Views\Noticias\Editar.aspx" />
+    <Content Include="Views\Noticias\Index.aspx" />
+    <Content Include="Views\Noticias\Publicar.aspx" />
+    <Content Include="Views\Recolector\Editar.aspx" />
+    <Content Include="Views\Recolector\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
