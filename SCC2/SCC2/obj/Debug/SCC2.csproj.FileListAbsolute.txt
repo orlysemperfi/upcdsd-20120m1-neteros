@@ -1,0 +1,5 @@
+E:\franco\SCC2\SCC2\bin\SCC2.dll
+E:\franco\SCC2\SCC2\bin\SCC2.pdb
+E:\franco\SCC2\SCC2\obj\Debug\ResolveAssemblyReference.cache
+E:\franco\SCC2\SCC2\obj\Debug\SCC2.dll
+E:\franco\SCC2\SCC2\obj\Debug\SCC2.pdb
