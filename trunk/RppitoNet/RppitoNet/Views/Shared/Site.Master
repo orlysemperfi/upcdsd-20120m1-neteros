@@ -30,11 +30,12 @@
             <div id="menucontainer">
             
                 <ul id="menu">              
+
                     <li><%: Html.ActionLink("Inicio", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("Editar Noticias", "EditarLista", "Acciones")%></li>
-                    <li><%: Html.ActionLink("Publicar Noticias", "Publicar", "Acciones")%></li>
-                    <li><%: Html.ActionLink("Priorizar Noticias", "Priorizar", "Acciones")%></li>
-                    <li><%: Html.ActionLink("Mapear Noticias", "Mapear", "Acciones")%></li>
+                    <li><%: Html.ActionLink("Edición", "Index", "Recolector")%></li>
+                    <li><%: Html.ActionLink("Noticias", "Index", "Noticias")%></li>
+                    <li><%: Html.ActionLink("Portada", "Priorizar", "Acciones")%></li>
+                    <li><%: Html.ActionLink("Mapeo", "Index", "Mapeo")%></li>
                     <li><%: Html.ActionLink("Distribuir Twitter", "Distribuir_Lista", "Acciones")%></li>
                     <li><%: Html.ActionLink("Acerca de", "About", "Home")%></li>
                 </ul>
