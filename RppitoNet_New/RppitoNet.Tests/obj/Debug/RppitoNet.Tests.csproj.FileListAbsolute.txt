@@ -6,3 +6,11 @@ C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\bin\Debug\Rpp
 C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\obj\Debug\RppitoNet.Tests.dll
 C:\Users\Miguel\Documents\Upc\TrabajoDSD\RppitoNet\RppitoNet.Tests\obj\Debug\RppitoNet.Tests.pdb
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\obj\Debug\ResolveAssemblyReference.cache
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\obj\Debug\RppitoNet.Tests.pdb
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\bin\Debug\RppitoNet.Tests.dll.config
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\bin\Debug\RppitoNet.Tests.dll
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\bin\Debug\RppitoNet.Tests.pdb
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\bin\Debug\RppitoNet.dll
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\bin\Debug\RppitoNet.pdb
+E:\JSB\proyecto\RppitoNet_New\RppitoNet.Tests\obj\Debug\RppitoNet.Tests.dll
