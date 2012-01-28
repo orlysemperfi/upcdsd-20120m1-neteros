@@ -14,8 +14,9 @@ namespace RppitoNet.Controllers
 
         public ActionResult EditarLista()
         {
-            var Noticias = new Models.NoticiaModel().GetNoticias();
-            return View(Noticias);
+            //var Noticias = new Models.NoticiaModel().GetNoticias();
+            //return View(Noticias);
+            return View();
         }
 
 
@@ -23,7 +24,8 @@ namespace RppitoNet.Controllers
 
         public ActionResult EditarDetalle(string  IdNoticia)
         {
-            return View(new Models.NoticiaModel().GetNoticia(IdNoticia));
+            //return View(new Models.NoticiaModel().GetNoticia(IdNoticia));
+            return View();
         }
 
         //
