@@ -8,3 +8,8 @@ E:\RppitoNet\RppitoNet\bin\RppitoNet.pdb
 E:\RppitoNet\RppitoNet\obj\Debug\ResolveAssemblyReference.cache
 E:\RppitoNet\RppitoNet\obj\Debug\RppitoNet.dll
 E:\RppitoNet\RppitoNet\obj\Debug\RppitoNet.pdb
+E:\JSB\proyecto\RppitoNet_New\RppitoNet\obj\Debug\ResolveAssemblyReference.cache
+E:\JSB\proyecto\RppitoNet_New\RppitoNet\obj\Debug\RppitoNet.dll
+E:\JSB\proyecto\RppitoNet_New\RppitoNet\bin\RppitoNet.dll
+E:\JSB\proyecto\RppitoNet_New\RppitoNet\bin\RppitoNet.pdb
+E:\JSB\proyecto\RppitoNet_New\RppitoNet\obj\Debug\RppitoNet.pdb
