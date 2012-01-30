@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RppitoNet.Models;
 
 namespace RppitoNet.Controllers
 {
@@ -11,11 +12,13 @@ namespace RppitoNet.Controllers
     {
         //
         // GET: /Editar/
+        NoticiaBL modelo = new NoticiaBL();
 
         public ActionResult Index()
         {
-        
-            return View();
+            var noticias = modelo.Listado("20120124").ToList();
+            return View(noticias);
+
         }
 
         public ActionResult Editar(/*int Idnoticia*/)
