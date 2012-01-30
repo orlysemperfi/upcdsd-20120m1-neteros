@@ -22,5 +22,25 @@ namespace RppitoNet.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ERIKA1\\SQLEXPRESS2008;Initial Catalog=RppDb;Integrated Security=True")]
+        public string Setting {
+            get {
+                return ((string)(this["Setting"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3270/recolector.asmx")]
+        public string RppitoNet_recolector_ws_recolector {
+            get {
+                return ((string)(this["RppitoNet_recolector_ws_recolector"]));
+            }
+        }
     }
 }

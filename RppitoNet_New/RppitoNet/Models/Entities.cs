@@ -3,8 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MvcApplication1.Models
+namespace RppitoNet.Models
 {
+
+    public class RecolectorBE
+    {
+        public int IdRecolector { get; set; }
+        public string Titulo { get; set; }
+        public string Contenido { get; set; }
+        public string TipoVista { get; set; }
+        public int Idseccion { get; set; }
+        public int IdTipoNoticia { get; set; }
+        public DateTime Fecha { get; set; }
+        public int Idreportero { get; set; }
+        public string Nomreportero { get; set; }
+        public int Idvideo { get; set; }
+        public int Idimagen { get; set; }
+        public int prioridad { get; set; }
+
+    }
+
     public class NoticiaBE
     {
         public int IdNoticia { get; set; }

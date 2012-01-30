@@ -7,14 +7,14 @@ using System.Configuration;
 using System.Data.Common;
 using System.Data;
 
-namespace MvcApplication1.Models
+namespace RppitoNet.Models
 {
     public class NoticiaDL
     {
 
-        //public string conexion = ConfigurationManager.ConnectionStrings["MvcApplication1.Properties.Settings.Setting"].ConnectionString;
-        //public string provider = ConfigurationManager.ConnectionStrings["MvcApplication1.Properties.Settings.Setting"].ProviderName;
-        ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["MvcApplication1.Properties.Settings.Setting"];
+        //public string conexion = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"].ConnectionString;
+        //public string provider = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"].ProviderName;
+        ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"];
 
         public bool Mantenimiento(string pAccion, NoticiaBE pNoticia)
         {
