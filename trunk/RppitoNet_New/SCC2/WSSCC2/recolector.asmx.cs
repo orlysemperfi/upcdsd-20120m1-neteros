@@ -79,7 +79,95 @@ namespace WSSCC2
             return lista;
         }
 
+
+        [WebMethod]
+        public List<RecolectorBE> RegistroRecolector(int IdRecolector)
+        {
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["WS_Repositorio.Properties.Settings.Setting"];
+            SqlConnection conexion = new SqlConnection(settings.ConnectionString);
+            conexion.Open();
+
+            SqlCommand cmd = conexion.CreateCommand();
+
+            cmd.CommandText = "pa_Listado_Recolector";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param = cmd.CreateParameter();
+            param.DbType = DbType.String;
+            param.Value = pFecha;
+            param.ParameterName = "fecha";
+            cmd.Parameters.Add(param);
+
+
+            //DbParameter param = factory.CreateParameter();
+            DbParameter param = cmd.CreateParameter();
+            param.DbType = DbType.Int64;
+            param.Value = pIdNoticia;
+            param.ParameterName = "IdNoticia";
+            cmd.Parameters.Add(param);
+
+            NoticiaBE item = new NoticiaBE();
+
+            try
+            {
+
+                DbDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {
+                    item.IdNoticia = dr.GetInt32(dr.GetOrdinal("IdNoticia"));
+                    item.IdRecolector = dr.GetInt32(dr.GetOrdinal("IdRecolector"));
+                    item.Titulo = dr.GetString(dr.GetOrdinal("Titulo"));
+                    item.Contenido = dr.GetString(dr.GetOrdinal("Contenido"));
+                    item.Fecha = dr.GetDateTime(dr.GetOrdinal("Fecha"));
+                    item.prioridad = dr.GetInt32(dr.GetOrdinal("prioridad"));
+                    item.Idseccion = dr.GetInt32(dr.GetOrdinal("Idseccion"));
+                    item.IdTipoNoticia = dr.GetInt32(dr.GetOrdinal("IdTipoNoticia"));
+                    item.Idreportero = dr.GetInt32(dr.GetOrdinal("Idreportero"));
+                    item.Idvideo = dr.GetInt32(dr.GetOrdinal("Idvideo"));
+                    item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
+                    if (System.Convert.IsDBNull(dr["flg_req_mapa"]))
+                        item.flg_req_mapa = false;
+                    else
+                        item.flg_req_mapa = dr.GetBoolean(dr.GetOrdinal("flg_req_mapa"));
+
+                    if (System.Convert.IsDBNull(dr["flg_mapa"]))
+                        item.flg_mapa = false;
+                    else
+                        item.flg_mapa = dr.GetBoolean(dr.GetOrdinal("flg_mapa"));
+
+                    if (System.Convert.IsDBNull(dr["flg_publicado"]))
+                        item.flg_publicado = false;
+                    else
+                        item.flg_publicado = dr.GetBoolean(dr.GetOrdinal("flg_publicado"));
+
+                    if (System.Convert.IsDBNull(dr["flg_twitter"]))
+                        item.flg_twitter = false;
+                    else
+                        item.flg_twitter = dr.GetBoolean(dr.GetOrdinal("flg_twitter"));
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+                conexion.Dispose();
+            }
+
+            return item;
+        }
+
+
     }
+
 
 
     public class RecolectorBE

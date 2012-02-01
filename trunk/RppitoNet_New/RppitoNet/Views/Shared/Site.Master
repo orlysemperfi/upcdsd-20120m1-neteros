@@ -32,11 +32,10 @@
                 <ul id="menu">              
 
                     <li><%: Html.ActionLink("Inicio", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("Edición", "Index", "Recolector")%></li>
-                    <li><%: Html.ActionLink("Noticias", "Index", "Noticias")%></li>
-                    <li><%: Html.ActionLink("Portada", "Priorizar", "Acciones")%></li>
-                    <li><%: Html.ActionLink("Mapeo", "Index", "Mapeo")%></li>
-                    <li><%: Html.ActionLink("Distribuir Twitter", "Distribuir_Lista", "Acciones")%></li>
+                    <li><%: Html.ActionLink("Edición de Noticias", "Index", "Noticias")%></li>
+                    <li><%: Html.ActionLink("Publicación de Noticias", "Index", "Publicar")%></li>
+                    <li><%: Html.ActionLink("Infografía de Noticias", "Index", "Mapeo")%></li>
+                    <li><%: Html.ActionLink("Distribuir Twitter", "Index", "Distribuir")%></li>
                     <li><%: Html.ActionLink("Acerca de", "About", "Home")%></li>
                 </ul>
             

@@ -80,7 +80,13 @@
             <%: Html.DisplayFor(modelItem => item.Prioridad) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new {  id=item.IdNoticia  })%> |
+            <% if (item.IdNoticia == 0)
+               { %>
+            <%: Html.ActionLink("Edit", "Edit_Recolector", new { id = item.IdNoticia })%>
+            <% }
+               else { %>
+            <%: Html.ActionLink("Edit", "Edit", new { id = item.IdRecolector })%>                  
+             <%  } %>
             <!--
             <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
             <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
