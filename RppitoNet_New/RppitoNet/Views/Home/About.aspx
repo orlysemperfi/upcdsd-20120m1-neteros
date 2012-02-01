@@ -23,13 +23,9 @@
         </b>
     <br />
     <br />
-    Monica Chacon Julian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - U620611 
-    <br />
     Franco Encalada Vega&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - U201114916
     <br />
     Rodolfo Laredo Gomez&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - U921131
-    <br />
-    Pedro Lopez Santilla&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - U814471
     <br />
     Julio Salvatierra Barrientos&nbsp;&nbsp;&nbsp;&nbsp; - U201021083
     <br />
