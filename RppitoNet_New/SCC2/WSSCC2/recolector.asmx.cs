@@ -55,9 +55,23 @@ namespace WSSCC2
                     item.Fecha = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                     item.prioridad = dr.GetInt32(dr.GetOrdinal("Prioridad"));
                     item.Idseccion = dr.GetInt32(dr.GetOrdinal("Idseccion"));
-                    //valida Null item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
-                    //valida Null item.Idvideo = dr.GetInt32(dr.GetOrdinal("Idvideo"));
                     item.Nomreportero = dr.GetString(dr.GetOrdinal("Nombrereportero"));
+                    if (System.Convert.IsDBNull(dr["Idvideo"]))
+                    {
+                        item.Idvideo = 0;
+                    }
+                    else
+                    {
+                        item.Idvideo = dr.GetInt32(dr.GetOrdinal("Idvideo"));
+                    }
+                    if (System.Convert.IsDBNull(dr["Idimagen"]))
+                    {
+                        item.Idimagen = 0;
+                    }
+                    else
+                    {
+                        item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
+                    }
 
                     lista.Add(item);
                 }
@@ -81,7 +95,7 @@ namespace WSSCC2
 
 
         [WebMethod]
-        public List<RecolectorBE> RegistroRecolector(int IdRecolector)
+        public RecolectorBE RegistroRecolector(int IdRecolector)
         {
             ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["WS_Repositorio.Properties.Settings.Setting"];
             SqlConnection conexion = new SqlConnection(settings.ConnectionString);
@@ -89,62 +103,48 @@ namespace WSSCC2
 
             SqlCommand cmd = conexion.CreateCommand();
 
-            cmd.CommandText = "pa_Listado_Recolector";
+            cmd.CommandText = "pa_Registro_Recolector";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter param = cmd.CreateParameter();
-            param.DbType = DbType.String;
-            param.Value = pFecha;
-            param.ParameterName = "fecha";
-            cmd.Parameters.Add(param);
-
-
-            //DbParameter param = factory.CreateParameter();
-            DbParameter param = cmd.CreateParameter();
             param.DbType = DbType.Int64;
-            param.Value = pIdNoticia;
-            param.ParameterName = "IdNoticia";
+            param.Value = IdRecolector;
+            param.ParameterName = "IdRecolector";
             cmd.Parameters.Add(param);
 
-            NoticiaBE item = new NoticiaBE();
+            RecolectorBE item = new RecolectorBE();
 
             try
             {
 
-                DbDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
                 while (dr.Read())
                 {
-                    item.IdNoticia = dr.GetInt32(dr.GetOrdinal("IdNoticia"));
                     item.IdRecolector = dr.GetInt32(dr.GetOrdinal("IdRecolector"));
                     item.Titulo = dr.GetString(dr.GetOrdinal("Titulo"));
                     item.Contenido = dr.GetString(dr.GetOrdinal("Contenido"));
                     item.Fecha = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                     item.prioridad = dr.GetInt32(dr.GetOrdinal("prioridad"));
                     item.Idseccion = dr.GetInt32(dr.GetOrdinal("Idseccion"));
-                    item.IdTipoNoticia = dr.GetInt32(dr.GetOrdinal("IdTipoNoticia"));
-                    item.Idreportero = dr.GetInt32(dr.GetOrdinal("Idreportero"));
-                    item.Idvideo = dr.GetInt32(dr.GetOrdinal("Idvideo"));
-                    item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
-                    if (System.Convert.IsDBNull(dr["flg_req_mapa"]))
-                        item.flg_req_mapa = false;
-                    else
-                        item.flg_req_mapa = dr.GetBoolean(dr.GetOrdinal("flg_req_mapa"));
+                    item.Nomreportero = dr.GetString(dr.GetOrdinal("NombreReportero"));
 
-                    if (System.Convert.IsDBNull(dr["flg_mapa"]))
-                        item.flg_mapa = false;
+                    if (System.Convert.IsDBNull(dr["Idvideo"]))
+                    {
+                        item.Idvideo = 0;
+                    }
                     else
-                        item.flg_mapa = dr.GetBoolean(dr.GetOrdinal("flg_mapa"));
-
-                    if (System.Convert.IsDBNull(dr["flg_publicado"]))
-                        item.flg_publicado = false;
+                    {
+                        item.Idvideo = dr.GetInt32(dr.GetOrdinal("Idvideo"));
+                    }
+                    if (System.Convert.IsDBNull(dr["Idimagen"]))
+                    {
+                        item.Idimagen = 0;
+                    }
                     else
-                        item.flg_publicado = dr.GetBoolean(dr.GetOrdinal("flg_publicado"));
-
-                    if (System.Convert.IsDBNull(dr["flg_twitter"]))
-                        item.flg_twitter = false;
-                    else
-                        item.flg_twitter = dr.GetBoolean(dr.GetOrdinal("flg_twitter"));
+                    {
+                        item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
+                    }
                 }
 
                 dr.Close();
@@ -172,7 +172,6 @@ namespace WSSCC2
 
     public class RecolectorBE
     {
-        public int IdNoticia { get; set; }
         public int IdRecolector { get; set; }
         public string Titulo { get; set; }
         public string Contenido { get; set; }

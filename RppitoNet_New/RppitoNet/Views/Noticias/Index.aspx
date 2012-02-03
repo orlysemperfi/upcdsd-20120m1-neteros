@@ -6,11 +6,51 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <h2>Edición</h2>
+    <% using (Html.BeginForm()) {%>
+        <%: Html.ValidationSummary(true) %>
 
-    <form id="form1" runat="server">
+    <table style="width:100%;">
+        <tr>
+            <td style="width: 57px">
+                &nbsp;</td>
+            <td style="width: 111px">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 57px">
+                Fecha</td>
+            <td style="width: 111px">
+            <%= Html.TextBox("txtFecha", DateTime.Now.ToString("dd'/'MM'/'yyyy") )%> 
+            </td>
+            <td>
+            <!--
+                <input type="submit" name="btnConsultar" value="Consultar" /> 
 
-    <h2>EDICION</h2>
-    <h2>Noticias</h2>
+                <button name="btnConsultar" value="Consultar">Consultar</button>
+                -->
+                
+                <input type="submit" value="Consultar" />
+
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 57px">
+                &nbsp;</td>
+            <td style="width: 111px">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        </table>
 
 <table>
     <tr>
@@ -82,10 +122,10 @@
         <td>
             <% if (item.IdNoticia == 0)
                { %>
-            <%: Html.ActionLink("Edit", "Edit_Recolector", new { id = item.IdNoticia })%>
+            <%: Html.ActionLink("Edit", "Edit_Recolector", new { id = item.IdRecolector })%>
             <% }
                else { %>
-            <%: Html.ActionLink("Edit", "Edit", new { id = item.IdRecolector })%>                  
+            <%: Html.ActionLink("Edit", "Edit", new { id = item.IdNoticia })%>
              <%  } %>
             <!--
             <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
@@ -96,5 +136,5 @@
 <% } %>
 
 </table>
-    </form>
+    <% } %>
 </asp:Content>

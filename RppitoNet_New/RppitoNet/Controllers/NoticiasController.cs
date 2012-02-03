@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using RppitoNet.Models;
 
 namespace RppitoNet.Controllers
@@ -13,12 +14,24 @@ namespace RppitoNet.Controllers
 
         NoticiaBL modelo = new NoticiaBL();
 
+
         public ActionResult Index()
         {
-            var noticias = modelo.Listado("20120124").ToList();
+            var noticias = modelo.Listado(DateTime.Now.ToString("yyyyMMdd")).ToList();
             return View(noticias);
-
         }
+
+        [HttpPost]
+        //public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Index(string txtFecha)
+        {
+            string pFecha = txtFecha.Substring(6, 4) + txtFecha.Substring(3, 2) + txtFecha.Substring(0, 2);
+
+            var noticias = modelo.Listado(pFecha).ToList();
+            return View(noticias);
+        }
+
+
 
         //
         // GET: /Editar/
@@ -49,7 +62,7 @@ namespace RppitoNet.Controllers
 
                 //var prod = modelo..Products.FirstOrDefault(p => p.ProductID == id);
 
-                NoticiaBE noticia = new NoticiaBE();
+                //NoticiaBE noticia = new NoticiaBE();
 
                 //noticia.IdNoticia = Int32.Parse(Request.Form["IdNoticia"]);
                 //noticia.IdRecolector = Int32.Parse(Request.Form["IdRecolector"]);
@@ -114,7 +127,7 @@ namespace RppitoNet.Controllers
             SeccionBL seccion = new SeccionBL();
             ReporteroBL reportero = new ReporteroBL();
 
-            var item = modelo.Registro(id);
+            var item = modelo.RegistroRec(id);
             //ViewBag.Secciones = seccion.Listado().ToList();
             ViewData["Secciones"] = seccion.Listado().ToList();
             //ViewBag.Reporteros = reportero.Listado().ToList();
@@ -123,10 +136,56 @@ namespace RppitoNet.Controllers
         }
 
 
-        public ActionResult Publicar(/*int Idnoticia*/)
-        {
 
-            return View();
+        //
+        // POST: /Default1/Edit/5
+
+        [HttpPost]
+        //public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit_Recolector(int id, NoticiaBE entity)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+
+                if (modelo.Mantenimiento("N", entity))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    //revisar como refrescar
+                    SeccionBL seccion = new SeccionBL();
+                    ReporteroBL reportero = new ReporteroBL();
+
+                    var item = modelo.Registro(id);
+                    //ViewBag.Secciones = seccion.Listado().ToList();
+                    ViewData["Secciones"] = seccion.Listado().ToList();
+                    //ViewBag.Reporteros = reportero.Listado().ToList();
+                    ViewData["Reporteros"] = reportero.Listado().ToList();
+
+                    return View(entity);
+                }
+            }
+            catch
+            {
+
+                //revisar como refrescar
+                SeccionBL seccion = new SeccionBL();
+                ReporteroBL reportero = new ReporteroBL();
+
+                var item = modelo.Registro(id);
+                //ViewBag.Secciones = seccion.Listado().ToList();
+                ViewData["Secciones"] = seccion.Listado().ToList();
+                //ViewBag.Reporteros = reportero.Listado().ToList();
+                ViewData["Reporteros"] = reportero.Listado().ToList();
+
+
+                return View(entity);
+            }
         }
+
+
     }
 }

@@ -16,6 +16,52 @@ namespace RppitoNet.Models
         //public string provider = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"].ProviderName;
         ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"];
 
+        public bool Publicacion(int pId_noticia)
+        {
+            DbProviderFactory factoriaProveedor = DbProviderFactories.GetFactory(settings.ProviderName);
+
+            DbConnection conexion = factoriaProveedor.CreateConnection();
+            conexion.ConnectionString = settings.ConnectionString;
+            conexion.Open();
+            //DbCommand cmd = factoriaProveedor.CreateCommand();
+            DbCommand cmd = conexion.CreateCommand();
+            //DbDataAdapter da;
+
+            cmd.CommandText = "pa_Publica_Noticia";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            //DbParameter param = factoriaProveedor.CreateParameter();
+            DbParameter param = cmd.CreateParameter();
+            param.DbType = DbType.Int64;
+            param.Value = pId_noticia;
+            param.ParameterName = "IdNoticia";
+            cmd.Parameters.Add(param);
+
+            bool resultado = false;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                resultado = true;
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+                conexion.Dispose();
+            }
+
+            return resultado;
+
+        }
+
         public bool Mantenimiento(string pAccion, NoticiaBE pNoticia)
         {
             DbProviderFactory factoriaProveedor = DbProviderFactories.GetFactory(settings.ProviderName);
@@ -319,8 +365,6 @@ namespace RppitoNet.Models
             }
 
             return item;
-
-
         }
     }
 }
