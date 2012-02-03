@@ -31,6 +31,8 @@ namespace RppitoNet.recolector_ws {
         
         private System.Threading.SendOrPostCallback ListadoRecolectorOperationCompleted;
         
+        private System.Threading.SendOrPostCallback RegistroRecolectorOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +75,9 @@ namespace RppitoNet.recolector_ws {
         public event ListadoRecolectorCompletedEventHandler ListadoRecolectorCompleted;
         
         /// <remarks/>
+        public event RegistroRecolectorCompletedEventHandler RegistroRecolectorCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListadoRecolector", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public RecolectorBE[] ListadoRecolector(string pFecha) {
             object[] results = this.Invoke("ListadoRecolector", new object[] {
@@ -98,6 +103,35 @@ namespace RppitoNet.recolector_ws {
             if ((this.ListadoRecolectorCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ListadoRecolectorCompleted(this, new ListadoRecolectorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RegistroRecolector", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RecolectorBE RegistroRecolector(int IdRecolector) {
+            object[] results = this.Invoke("RegistroRecolector", new object[] {
+                        IdRecolector});
+            return ((RecolectorBE)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void RegistroRecolectorAsync(int IdRecolector) {
+            this.RegistroRecolectorAsync(IdRecolector, null);
+        }
+        
+        /// <remarks/>
+        public void RegistroRecolectorAsync(int IdRecolector, object userState) {
+            if ((this.RegistroRecolectorOperationCompleted == null)) {
+                this.RegistroRecolectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegistroRecolectorOperationCompleted);
+            }
+            this.InvokeAsync("RegistroRecolector", new object[] {
+                        IdRecolector}, this.RegistroRecolectorOperationCompleted, userState);
+        }
+        
+        private void OnRegistroRecolectorOperationCompleted(object arg) {
+            if ((this.RegistroRecolectorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RegistroRecolectorCompleted(this, new RegistroRecolectorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -128,8 +162,6 @@ namespace RppitoNet.recolector_ws {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class RecolectorBE {
         
-        private int idNoticiaField;
-        
         private int idRecolectorField;
         
         private string tituloField;
@@ -153,16 +185,6 @@ namespace RppitoNet.recolector_ws {
         private int idimagenField;
         
         private int prioridadField;
-        
-        /// <remarks/>
-        public int IdNoticia {
-            get {
-                return this.idNoticiaField;
-            }
-            set {
-                this.idNoticiaField = value;
-            }
-        }
         
         /// <remarks/>
         public int IdRecolector {
@@ -307,6 +329,32 @@ namespace RppitoNet.recolector_ws {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((RecolectorBE[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    public delegate void RegistroRecolectorCompletedEventHandler(object sender, RegistroRecolectorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RegistroRecolectorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RegistroRecolectorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RecolectorBE Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RecolectorBE)(this.results[0]));
             }
         }
     }

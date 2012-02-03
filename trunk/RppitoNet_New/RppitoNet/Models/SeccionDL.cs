@@ -62,7 +62,59 @@ namespace RppitoNet.Models
 
             return lista;
 
+        }
 
+        public SeccionBE Registro(Int64 pIdSeccion)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(settings.ProviderName);
+
+            DbConnection conexion = factory.CreateConnection();
+            conexion.ConnectionString = settings.ConnectionString;
+            conexion.Open();
+
+            //DbCommand cmd = factory.CreateCommand();
+            DbCommand cmd = conexion.CreateCommand();
+            //DbDataAdapter da;
+
+            cmd.CommandText = "pa_Registro_Seccion";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            //DbParameter param = factory.CreateParameter();
+            DbParameter param = cmd.CreateParameter();
+            param.DbType = DbType.Int64;
+            param.Value = pIdSeccion;
+            param.ParameterName = "Idseccion";
+            cmd.Parameters.Add(param);
+
+            SeccionBE item = new SeccionBE();
+
+            try
+            {
+
+                DbDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {
+                    item.Idseccion = dr.GetInt32(dr.GetOrdinal("Idseccion"));
+                    item.Nombre = dr.GetString(dr.GetOrdinal("Nombre"));
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+                conexion.Dispose();
+            }
+
+            return item;
         }
     }
 }

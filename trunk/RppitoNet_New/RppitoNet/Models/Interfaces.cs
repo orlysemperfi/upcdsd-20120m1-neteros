@@ -13,6 +13,7 @@ namespace RppitoNet.Models
     public interface ISeccion
     {
          List<SeccionBE> Listado();
+        SeccionBE Registro(int pId_seccion);
     }
 
     public interface ITipoNoticia
@@ -24,7 +25,10 @@ namespace RppitoNet.Models
     {
          NoticiaBE Registro(int pId_noticia);
          bool Mantenimiento(string pAccion, NoticiaBE pNoticiaBE);
+         bool Publicacion(int pId_noticia);
          List<RNoticiaBE> Listado(string pFecha);
+
+         NoticiaBE RegistroRec(int pId_recolector);
     }
 
 }

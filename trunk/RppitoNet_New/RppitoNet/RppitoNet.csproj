@@ -74,6 +74,7 @@
     <Compile Include="Controllers\NoticiasController.cs" />
     <Compile Include="Controllers\PlantillaController.cs" />
     <Compile Include="Controllers\PruebaController.cs" />
+    <Compile Include="Controllers\PublicacionController.cs" />
     <Compile Include="Controllers\RecolectorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -124,10 +125,12 @@
     <Content Include="Views\Acciones\EditarLista.aspx" />
     <Content Include="Views\Mapeo\Index.aspx" />
     <Content Include="Views\Noticias\Edit.aspx" />
+    <Content Include="Views\Noticias\Edit_Recolector.aspx" />
     <Content Include="Views\Noticias\Index.aspx" />
-    <Content Include="Views\Noticias\Publicar.aspx" />
     <Content Include="Views\Prueba\Edit.aspx" />
     <Content Include="Views\Prueba\Index.aspx" />
+    <Content Include="Views\Publicacion\Edit.aspx" />
+    <Content Include="Views\Publicacion\Index.aspx" />
     <Content Include="Views\Recolector\Editar.aspx" />
     <Content Include="Views\Recolector\Index.aspx" />
     <Content Include="Web.config" />
