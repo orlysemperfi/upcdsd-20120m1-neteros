@@ -34,7 +34,7 @@
                     <li><%: Html.ActionLink("Inicio", "Index", "Home")%></li>
                     <li><%: Html.ActionLink("Edición de Noticias", "Index", "Noticias")%></li>
                     <li><%: Html.ActionLink("Publicación de Noticias", "Index", "Publicacion")%></li>
-                    <li><%: Html.ActionLink("Infografía de Noticias", "Index", "Mapeo")%></li>
+                    <li><%: Html.ActionLink("Infografía de Noticias", "Index", "Infografia")%></li>
                     <li><%: Html.ActionLink("Distribuir Twitter", "Index", "Distribucion")%></li>
                     <li><%: Html.ActionLink("Acerca de", "About", "Home")%></li>
                 </ul>

@@ -68,14 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AccionesController.cs" />
+    <Compile Include="Controllers\DistribucionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MapeoController.cs" />
+    <Compile Include="Controllers\InfografiaController.cs" />
     <Compile Include="Controllers\NoticiasController.cs" />
-    <Compile Include="Controllers\PlantillaController.cs" />
-    <Compile Include="Controllers\PruebaController.cs" />
     <Compile Include="Controllers\PublicacionController.cs" />
-    <Compile Include="Controllers\RecolectorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -116,23 +113,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Views\Acciones\Distribuir_Detalle.aspx" />
-    <Content Include="Views\Acciones\Distribuir_Lista.aspx" />
-    <Content Include="Views\Acciones\EditarDetalle.aspx" />
-    <Content Include="Views\Acciones\Mapear.aspx" />
-    <Content Include="Views\Acciones\Priorizar.aspx" />
-    <Content Include="Views\Acciones\Publicar.aspx" />
-    <Content Include="Views\Acciones\EditarLista.aspx" />
-    <Content Include="Views\Mapeo\Index.aspx" />
+    <Content Include="Views\Distribucion\Edit.aspx" />
+    <Content Include="Views\Distribucion\Index.aspx" />
+    <Content Include="Views\Infografia\Edit.aspx" />
+    <Content Include="Views\Infografia\Index.aspx" />
     <Content Include="Views\Noticias\Edit.aspx" />
     <Content Include="Views\Noticias\Edit_Recolector.aspx" />
     <Content Include="Views\Noticias\Index.aspx" />
-    <Content Include="Views\Prueba\Edit.aspx" />
-    <Content Include="Views\Prueba\Index.aspx" />
     <Content Include="Views\Publicacion\Edit.aspx" />
     <Content Include="Views\Publicacion\Index.aspx" />
-    <Content Include="Views\Recolector\Editar.aspx" />
-    <Content Include="Views\Recolector\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
