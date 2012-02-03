@@ -17,7 +17,7 @@ namespace RppitoNet.Controllers
 
         public ActionResult Index()
         {
-            var noticias = modelo.Listado(DateTime.Now.ToString("yyyyMMdd")).ToList();
+            var noticias = modelo.Listado(DateTime.Now.ToString("yyyyMMdd"), "N").ToList();
             return View(noticias);
         }
 
@@ -27,7 +27,7 @@ namespace RppitoNet.Controllers
         {
             string pFecha = txtFecha.Substring(6, 4) + txtFecha.Substring(3, 2) + txtFecha.Substring(0, 2);
 
-            var noticias = modelo.Listado(pFecha).ToList();
+            var noticias = modelo.Listado(pFecha, "N").ToList();
             return View(noticias);
         }
 

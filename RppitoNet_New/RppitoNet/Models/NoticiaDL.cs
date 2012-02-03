@@ -219,7 +219,7 @@ namespace RppitoNet.Models
             return resultado;
         }
 
-        public List<RNoticiaBE> Listado(string pFecha)
+        public List<RNoticiaBE> Listado(string pFecha, string pTipo)
         {
             DbProviderFactory factory = DbProviderFactories.GetFactory(settings.ProviderName);
 
@@ -240,6 +240,13 @@ namespace RppitoNet.Models
             param.Value = pFecha;
             param.ParameterName = "fecha";
             cmd.Parameters.Add(param);
+
+            param = cmd.CreateParameter();
+            param.DbType = DbType.String;
+            param.Value = pTipo;
+            param.ParameterName = "tipo";
+            cmd.Parameters.Add(param);
+
             
             List<RNoticiaBE> lista = new List<RNoticiaBE>();
 

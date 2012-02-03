@@ -55,17 +55,19 @@ namespace RppitoNet.Models
             return noticia.Mantenimiento(pAccion, pNoticiaBE);
         }
 
-        public List<RNoticiaBE> Listado(string pFecha)
+        public List<RNoticiaBE> Listado(string pFecha, string pTipo)
         {
             NoticiaDL noticia = new NoticiaDL();
             SeccionBL seccion = new SeccionBL();
             List<RNoticiaBE> resultado= new List<RNoticiaBE>();
-            resultado= noticia.Listado(pFecha);
+            resultado= noticia.Listado(pFecha, pTipo);
 
-            recolector_ws.recolector recolector = new recolector_ws.recolector();
-
-            foreach (recolector_ws.RecolectorBE item in recolector.ListadoRecolector(pFecha))
+            if (pTipo == "N")
             {
+                recolector_ws.recolector recolector = new recolector_ws.recolector();
+
+                foreach (recolector_ws.RecolectorBE item in recolector.ListadoRecolector(pFecha))
+                {
                     RNoticiaBE result = resultado.Find(
                     delegate(RNoticiaBE bk)
                     {
@@ -87,8 +89,10 @@ namespace RppitoNet.Models
                         resultado.Add(rgto);
                     }
 
+                }            
             }
 
+            
             return resultado;
         }
 
