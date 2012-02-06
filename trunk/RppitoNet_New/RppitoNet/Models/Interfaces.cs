@@ -8,7 +8,9 @@ namespace RppitoNet.Models
     public interface IReportero
     {
         List<ReporteroBE> Listado();
+        int Codigo(string pNombre);
     }
+
 
     public interface ISeccion
     {

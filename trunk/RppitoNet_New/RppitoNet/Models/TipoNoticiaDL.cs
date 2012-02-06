@@ -16,7 +16,6 @@ namespace RppitoNet.Models
         //public string provider = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"].ProviderName;
         ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"];
 
-
         public List<TipoNoticiaBE> Listado()
         {
             DbProviderFactory factoriaProveedor = DbProviderFactories.GetFactory(settings.ProviderName);

@@ -79,24 +79,26 @@ namespace RppitoNet.recolector_ws {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListadoRecolector", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public RecolectorBE[] ListadoRecolector(string pFecha) {
+        public RecolectorBE[] ListadoRecolector(string pFecha, int pId_recolector) {
             object[] results = this.Invoke("ListadoRecolector", new object[] {
-                        pFecha});
+                        pFecha,
+                        pId_recolector});
             return ((RecolectorBE[])(results[0]));
         }
         
         /// <remarks/>
-        public void ListadoRecolectorAsync(string pFecha) {
-            this.ListadoRecolectorAsync(pFecha, null);
+        public void ListadoRecolectorAsync(string pFecha, int pId_recolector) {
+            this.ListadoRecolectorAsync(pFecha, pId_recolector, null);
         }
         
         /// <remarks/>
-        public void ListadoRecolectorAsync(string pFecha, object userState) {
+        public void ListadoRecolectorAsync(string pFecha, int pId_recolector, object userState) {
             if ((this.ListadoRecolectorOperationCompleted == null)) {
                 this.ListadoRecolectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListadoRecolectorOperationCompleted);
             }
             this.InvokeAsync("ListadoRecolector", new object[] {
-                        pFecha}, this.ListadoRecolectorOperationCompleted, userState);
+                        pFecha,
+                        pId_recolector}, this.ListadoRecolectorOperationCompleted, userState);
         }
         
         private void OnListadoRecolectorOperationCompleted(object arg) {

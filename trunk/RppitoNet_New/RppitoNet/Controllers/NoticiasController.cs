@@ -14,10 +14,9 @@ namespace RppitoNet.Controllers
 
         NoticiaBL modelo = new NoticiaBL();
 
-
         public ActionResult Index()
         {
-            var noticias = modelo.Listado(DateTime.Now.ToString("yyyyMMdd"), "N").ToList();
+            var noticias = modelo.Listado(DateTime.Now.ToString("yyyyMMdd"), "T").ToList();
             return View(noticias);
         }
 
@@ -27,7 +26,7 @@ namespace RppitoNet.Controllers
         {
             string pFecha = txtFecha.Substring(6, 4) + txtFecha.Substring(3, 2) + txtFecha.Substring(0, 2);
 
-            var noticias = modelo.Listado(pFecha, "N").ToList();
+            var noticias = modelo.Listado(pFecha, "T").ToList();
             return View(noticias);
         }
 
@@ -80,6 +79,7 @@ namespace RppitoNet.Controllers
                 //noticia.flg_twitter = bool.Parse(Request.Form["flg_twitter"]);
                 //noticia.prioridad = Int32.Parse(Request.Form["prioridad"]);
 
+                entity.estado = "E";
 
                 if (modelo.Mantenimiento("M", entity))
                 {

@@ -23,6 +23,7 @@ namespace RppitoNet.Models
 
     }
 
+
     public class NoticiaBE
     {
         public int IdNoticia { get; set; }
@@ -41,6 +42,7 @@ namespace RppitoNet.Models
         public bool flg_publicado { get; set; }
         public bool flg_twitter { get; set; }
         public int prioridad { get; set; }
+        public string estado { get; set; }
     }
 
     public class SeccionBE

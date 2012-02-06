@@ -11,6 +11,7 @@ namespace RppitoNet.Models
         {
             SeccionDL seccion = new SeccionDL();
             return seccion.Listado();
+
         }
 
         public SeccionBE Registro(int pId_seccion)

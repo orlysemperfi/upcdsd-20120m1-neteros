@@ -7,6 +7,7 @@ namespace RppitoNet.Models
 {
     public class NoticiaBL: INoticia
     {
+
         public NoticiaBE RegistroRec(int pId_recolector)
         {
             NoticiaDL noticia = new NoticiaDL();
@@ -59,39 +60,64 @@ namespace RppitoNet.Models
         {
             NoticiaDL noticia = new NoticiaDL();
             SeccionBL seccion = new SeccionBL();
-            List<RNoticiaBE> resultado= new List<RNoticiaBE>();
-            resultado= noticia.Listado(pFecha, pTipo);
+            ReporteroBL reportero = new ReporteroBL();
 
-            if (pTipo == "N")
+            Int32 max_rec = noticia.MaxRecolector();
+
+            if (pTipo == "T")
             {
                 recolector_ws.recolector recolector = new recolector_ws.recolector();
+                NoticiaBE rgto = new NoticiaBE();
 
-                foreach (recolector_ws.RecolectorBE item in recolector.ListadoRecolector(pFecha))
+                foreach (recolector_ws.RecolectorBE item in recolector.ListadoRecolector(pFecha, max_rec))
                 {
-                    RNoticiaBE result = resultado.Find(
-                    delegate(RNoticiaBE bk)
-                    {
-                        return bk.IdRecolector == item.IdRecolector;
-                    }
-                    );
-                    if (result == null)
-                    {
-                        RNoticiaBE rgto = new RNoticiaBE();
-                        rgto.IdRecolector = item.IdRecolector;
-                        rgto.Titulo = item.Titulo;
-                        rgto.Fecha = item.Fecha;
-                        rgto.Prioridad = item.prioridad;
-                        rgto.Seccion = seccion.Registro(item.Idseccion).Nombre;
-                        rgto.Reportero = item.Nomreportero;
-                        rgto.Flg_publicado = false;
-                        rgto.Flg_twitter = false;
+                    rgto.IdRecolector = item.IdRecolector;
+                    rgto.Titulo = item.Titulo;
+                    rgto.Contenido = item.Contenido;
+                    rgto.Idseccion = item.Idseccion;
+                    rgto.prioridad = item.prioridad;
+                    rgto.Fecha = item.Fecha;
+                    rgto.Idreportero = reportero.Codigo(item.Nomreportero);
+                    rgto.Idvideo = item.Idvideo;
+                    rgto.Idimagen = item.Idimagen;
+                    rgto.flg_req_mapa = false;
+                    rgto.flg_mapa = false;
+                    rgto.flg_publicado = false;
+                    rgto.flg_twitter = false;
+                    rgto.estado = "R";
 
-                        resultado.Add(rgto);
+
+                    if (noticia.Mantenimiento("N", rgto) == false)
+                    {
+                        throw new Exception("Error al agregar datos del recolector");
                     }
+
+                    //RNoticiaBE result = resultado.Find(
+                    //delegate(RNoticiaBE bk)
+                    //{
+                    //    return bk.IdRecolector == item.IdRecolector;
+                    //}
+                    //);
+                    //if (result == null)
+                    //{
+                    //    RNoticiaBE rgto = new RNoticiaBE();
+                    //    rgto.IdRecolector = item.IdRecolector;
+                    //    rgto.Titulo = item.Titulo;
+                    //    rgto.Fecha = item.Fecha;
+                    //    rgto.Prioridad = item.prioridad;
+                    //    rgto.Seccion = seccion.Registro(item.Idseccion).Nombre;
+                    //    rgto.Reportero = item.Nomreportero;
+                    //    rgto.Flg_publicado = false;
+                    //    rgto.Flg_twitter = false;
+
+                    //    resultado.Add(rgto);
+                    //}
 
                 }            
             }
 
+            List<RNoticiaBE> resultado = new List<RNoticiaBE>();
+            resultado = noticia.Listado(pFecha, pTipo);
             
             return resultado;
         }

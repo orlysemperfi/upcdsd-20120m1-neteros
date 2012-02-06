@@ -12,9 +12,47 @@ namespace RppitoNet.Models
     public class NoticiaDL
     {
 
+
         //public string conexion = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"].ConnectionString;
         //public string provider = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"].ProviderName;
         ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["RppitoNet.Properties.Settings.Setting"];
+
+        public int MaxRecolector()
+        {
+            DbProviderFactory factoriaProveedor = DbProviderFactories.GetFactory(settings.ProviderName);
+
+            DbConnection conexion = factoriaProveedor.CreateConnection();
+            conexion.ConnectionString = settings.ConnectionString;
+            conexion.Open();
+            //DbCommand cmd = factoriaProveedor.CreateCommand();
+            DbCommand cmd = conexion.CreateCommand();
+            //DbDataAdapter da;
+
+            cmd.CommandText = "Select isnull(max(idrecolector),0) From Noticias";
+            cmd.CommandType = CommandType.Text;
+
+           
+            Int32 resultado;
+
+            try
+            {
+                resultado = (Int32)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                resultado = 0;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+                conexion.Dispose();
+            }
+
+            return resultado;
+        }
 
         public bool Publicacion(int pId_noticia)
         {
@@ -127,13 +165,6 @@ namespace RppitoNet.Models
 
             //param = factoriaProveedor.CreateParameter();
             param = cmd.CreateParameter();
-            param.DbType = DbType.Int64;
-            param.Value = pNoticia.IdTipoNoticia;
-            param.ParameterName = "IdTipoNoticia";
-            cmd.Parameters.Add(param);
-
-            //param = factoriaProveedor.CreateParameter();
-            param = cmd.CreateParameter();
             param.DbType = DbType.DateTime;
             param.Value = pNoticia.Fecha;
             param.ParameterName = "Fecha";
@@ -193,6 +224,12 @@ namespace RppitoNet.Models
             param.DbType = DbType.Int64;
             param.Value = pNoticia.prioridad;
             param.ParameterName = "prioridad";
+            cmd.Parameters.Add(param);
+
+            param = cmd.CreateParameter();
+            param.DbType = DbType.String;
+            param.Value = pNoticia.estado;
+            param.ParameterName = "estado";
             cmd.Parameters.Add(param);
 
             bool resultado= false;
@@ -331,7 +368,7 @@ namespace RppitoNet.Models
                     item.Fecha = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                     item.prioridad = dr.GetInt32(dr.GetOrdinal("prioridad"));
                     item.Idseccion = dr.GetInt32(dr.GetOrdinal("Idseccion"));
-                    item.IdTipoNoticia = dr.GetInt32(dr.GetOrdinal("IdTipoNoticia"));
+                    //item.IdTipoNoticia = dr.GetInt32(dr.GetOrdinal("IdTipoNoticia"));
                     item.Idreportero = dr.GetInt32(dr.GetOrdinal("Idreportero"));
                     item.Idvideo = dr.GetInt32(dr.GetOrdinal("Idvideo"));
                     item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
