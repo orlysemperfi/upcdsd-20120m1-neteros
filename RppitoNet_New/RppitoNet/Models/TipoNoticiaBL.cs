@@ -10,6 +10,7 @@ namespace RppitoNet.Models
         public List<TipoNoticiaBE> Listado()
         {
             throw new NotImplementedException();
+
         }
     }
 }

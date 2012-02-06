@@ -12,5 +12,11 @@ namespace RppitoNet.Models
             ReporteroDL reportero = new ReporteroDL();
             return reportero.Listado();
         }
+        
+        public int Codigo(string pNombre)
+        {
+            ReporteroDL reportero = new ReporteroDL();
+            return reportero.Codigo(pNombre);
+        }
     }
 }
