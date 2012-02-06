@@ -22,7 +22,7 @@ namespace WSSCC2
     public class recolector : System.Web.Services.WebService
     {
         [WebMethod]
-        public List<RecolectorBE> ListadoRecolector(string pFecha)
+        public List<RecolectorBE> ListadoRecolector(string pFecha, int pId_recolector)
         {
             ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["WS_Repositorio.Properties.Settings.Setting"];
 
@@ -38,6 +38,12 @@ namespace WSSCC2
             param.DbType = DbType.String;
             param.Value = pFecha;
             param.ParameterName = "fecha";
+            cmd.Parameters.Add(param);
+
+            param = cmd.CreateParameter();
+            param.DbType = DbType.Int64;
+            param.Value = pId_recolector;
+            param.ParameterName = "idrecolector";
             cmd.Parameters.Add(param);
 
             List<RecolectorBE> lista = new List<RecolectorBE>();
