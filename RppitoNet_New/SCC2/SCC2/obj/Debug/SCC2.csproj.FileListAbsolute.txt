@@ -1,0 +1,5 @@
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proy\RppitoNet_New\SCC2\SCC2\bin\SCC2.dll
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proy\RppitoNet_New\SCC2\SCC2\bin\SCC2.pdb
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proy\RppitoNet_New\SCC2\SCC2\obj\Debug\ResolveAssemblyReference.cache
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proy\RppitoNet_New\SCC2\SCC2\obj\Debug\SCC2.dll
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proy\RppitoNet_New\SCC2\SCC2\obj\Debug\SCC2.pdb
