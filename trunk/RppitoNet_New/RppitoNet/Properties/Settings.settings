@@ -5,13 +5,25 @@
     <Setting Name="Setting" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=ERIKA1\SQLEXPRESS2008;Initial Catalog=RppDb;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=JSALVATIERRA\SQLEXPRESS_2008;Initial Catalog=RppDB;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=ERIKA1\SQLEXPRESS2008;Initial Catalog=RppDb;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=JSALVATIERRA\SQLEXPRESS_2008;Initial Catalog=RppDB;Integrated Security=True</Value>
     </Setting>
     <Setting Name="RppitoNet_recolector_ws_recolector" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:3270/recolector.asmx</Value>
+    </Setting>
+    <Setting Name="consumer_key" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1z3gUoPoRV3IU6kZYnNrg</Value>
+    </Setting>
+    <Setting Name="consumer_secret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">P6YECpzQOxemFXbRsxpYPTdTMbQy7xHRHgARF3tY870</Value>
+    </Setting>
+    <Setting Name="token" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">482395533-YcFGFsQ96GnWYfGKC8sztJGpZwQTWI11eXH2AkQD</Value>
+    </Setting>
+    <Setting Name="token_secret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">6wUYHgWx441tpLoRTrDdU603pmRZh7vPjFzSRM</Value>
     </Setting>
   </Settings>
 </SettingsFile>
