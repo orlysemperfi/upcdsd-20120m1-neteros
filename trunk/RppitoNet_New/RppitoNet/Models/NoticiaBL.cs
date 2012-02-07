@@ -128,5 +128,12 @@ namespace RppitoNet.Models
             NoticiaDL noticia = new NoticiaDL();
             return noticia.Publicacion(pId_noticia);
         }
+
+
+        public bool Distribucion(int pId_noticia)
+        {
+            NoticiaDL noticia = new NoticiaDL();
+            return noticia.Distribucion(pId_noticia);
+        }
     }
 }
