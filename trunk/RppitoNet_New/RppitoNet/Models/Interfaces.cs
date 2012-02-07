@@ -28,6 +28,7 @@ namespace RppitoNet.Models
          NoticiaBE Registro(int pId_noticia);
          bool Mantenimiento(string pAccion, NoticiaBE pNoticiaBE);
          bool Publicacion(int pId_noticia);
+         bool Distribucion(int pId_noticia);
          List<RNoticiaBE> Listado(string pFecha, string pTipo);
 
          NoticiaBE RegistroRec(int pId_recolector);
