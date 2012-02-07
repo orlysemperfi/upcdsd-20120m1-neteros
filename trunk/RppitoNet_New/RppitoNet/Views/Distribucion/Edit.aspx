@@ -139,10 +139,14 @@
             </div>
             
             <p>
+            <% var item = Model;
+                if (item.flg_twitter == false) { %>
                 <input type="submit" value="Distribuir" />
+            <% } %>
             </p>
         </fieldset>
     <% } %>
+    <div>
     <p>
         <%: Html.ActionLink("Back to List", "Index") %>
     </p>    </div>
