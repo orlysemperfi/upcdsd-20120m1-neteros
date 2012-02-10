@@ -3,13 +3,13 @@ HU's Neteros: Rppitos Noticias
 
 1.- Registrar noticia - Reportero de Campo
 	Nodo:Recolector de Noticias
-	R:Rodolfo
+	R:Franco
 
 2.- Edición de Noticia - Reportero de Contenido Web
 	Nodos:
 	-Recolector de Noticias
 	-CMS (Sistema Manejador de Contenidos)
-	R:Franco
+	R:Rodolfo
     Priorización de Noticias en web propia - Supervisor de Contenido Web
 	Nodo: CMS
 
