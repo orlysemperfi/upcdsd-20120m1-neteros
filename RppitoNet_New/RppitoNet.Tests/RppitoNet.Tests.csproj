@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Controllers\AccountControllerTest.cs" />
+    <Compile Include="RESTService\AccionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
