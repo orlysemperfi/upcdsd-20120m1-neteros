@@ -43,6 +43,8 @@ namespace RppitoNet.Models
         public bool flg_twitter { get; set; }
         public int prioridad { get; set; }
         public string estado { get; set; }
+        public string CoordX { get; set; }
+        public string CoordY { get; set; }
     }
 
     public class SeccionBE
@@ -75,5 +77,8 @@ namespace RppitoNet.Models
         public bool Flg_publicado { get; set; }
         public bool Flg_twitter { get; set; }
         public int Prioridad { get; set; }
+        public string CoordX { get; set; }
+        public string CoordY { get; set; }
     }
+
 }
