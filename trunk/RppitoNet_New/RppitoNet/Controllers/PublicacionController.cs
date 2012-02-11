@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 
 using RppitoNet.Models;
+using System.Messaging;
+using System.Threading;
 
 namespace RppitoNet.Controllers
 {
@@ -93,26 +95,46 @@ namespace RppitoNet.Controllers
         {
             try
             {
+                string rutaCola = ".\\private$\\" + "publicaciones" + "in";
+
+                if (!MessageQueue.Exists(rutaCola))
+                    MessageQueue.Create(rutaCola);
+
+                MessageQueue colaNeterosIn = new MessageQueue(rutaCola);
+
+                Message mensaje = new Message();
+                mensaje.Label = "Publicacion";
+                mensaje.Body = entity;
+
+                colaNeterosIn.Send(mensaje);
+
+
+                ////Thread hilo = new Thread(new ThreadStart(new Lector(@".\private$\" + "publicaciones" + "out").Leer));
+                //Thread hilo = new Thread(new ThreadStart(new Lector(@".\private$\" + "publicaciones" + "in").Leer));
+                //hilo.Start();
+
+                return RedirectToAction("Index");
+
                 // TODO: Add update logic here
 
-                if (modelo.Publicacion(entity.IdNoticia))
-                {
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    //revisar como refrescar
-                    SeccionBL seccion = new SeccionBL();
-                    ReporteroBL reportero = new ReporteroBL();
+               //if (modelo.Publicacion(entity.IdNoticia))
+               // {
+               //     return RedirectToAction("Index");
+               // }
+               // else
+               // {
+               //     //revisar como refrescar
+               //     SeccionBL seccion = new SeccionBL();
+               //     ReporteroBL reportero = new ReporteroBL();
 
-                    var item = modelo.Registro(id);
-                    //ViewBag.Secciones = seccion.Listado().ToList();
-                    ViewData["Secciones"] = seccion.Listado().ToList();
-                    //ViewBag.Reporteros = reportero.Listado().ToList();
-                    ViewData["Reporteros"] = reportero.Listado().ToList();
+               //     var item = modelo.Registro(id);
+               //     //ViewBag.Secciones = seccion.Listado().ToList();
+               //     ViewData["Secciones"] = seccion.Listado().ToList();
+               //     //ViewBag.Reporteros = reportero.Listado().ToList();
+               //     ViewData["Reporteros"] = reportero.Listado().ToList();
 
-                    return View(entity);
-                }
+               //     return View(entity);
+               // }
             }
             catch
             {
@@ -131,6 +153,40 @@ namespace RppitoNet.Controllers
                 return View(entity);
             }
         }
+
+
+        //public class Lector
+        //{
+        //    private string cola = null;
+        //    public Lector(string rutaCola)
+        //    {
+        //        cola = rutaCola;
+        //    }
+
+        //    public void Leer()
+        //    {
+        //        NoticiaBL modelo = new NoticiaBL();
+
+        //        if (!MessageQueue.Exists(cola))
+        //            MessageQueue.Create(cola);
+
+        //        MessageQueue colaOut = new MessageQueue(cola);
+        //        colaOut.Formatter = new XmlMessageFormatter(new Type[] { typeof(NoticiaBE) });
+
+        //        Message msg = null;
+
+        //        while (true)
+        //        {
+        //            //Thread.Sleep(20000);
+        //            Thread.Sleep(10000);
+        //            msg = colaOut.Receive();
+
+        //            modelo.Publicacion(((NoticiaBE)msg.Body).IdNoticia);
+
+        //        }
+
+        //    }
+        //}
 
         //
         // GET: /Publicacion/Delete/5
