@@ -12,7 +12,7 @@ namespace RppitoNet.Controllers
         public ActionResult Index()
         {
             ViewData["Message"] = "Inicio";
-
+            
             return View();
         }
 
