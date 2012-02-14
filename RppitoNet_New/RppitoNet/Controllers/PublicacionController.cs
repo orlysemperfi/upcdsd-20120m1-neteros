@@ -104,7 +104,7 @@ namespace RppitoNet.Controllers
 
                 Message mensaje = new Message();
                 mensaje.Label = "Publicacion";
-                mensaje.Body = entity;
+                mensaje.Body = (NoticiaBE)entity;
 
                 colaNeterosIn.Send(mensaje);
 
