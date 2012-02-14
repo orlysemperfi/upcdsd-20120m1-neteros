@@ -101,7 +101,7 @@ namespace WSSCC2
 
 
         [WebMethod]
-        public RecolectorBE RegistroRecolector(int IdRecolector)
+        public VideoBE RegistroVideo(int IdVideo)
         {
             ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["WS_Repositorio.Properties.Settings.Setting"];
             SqlConnection conexion = new SqlConnection(settings.ConnectionString);
@@ -109,16 +109,16 @@ namespace WSSCC2
 
             SqlCommand cmd = conexion.CreateCommand();
 
-            cmd.CommandText = "pa_Registro_Recolector";
+            cmd.CommandText = "pa_Registro_Video";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter param = cmd.CreateParameter();
             param.DbType = DbType.Int64;
-            param.Value = IdRecolector;
-            param.ParameterName = "IdRecolector";
+            param.Value = IdVideo;
+            param.ParameterName = "IdVideo";
             cmd.Parameters.Add(param);
 
-            RecolectorBE item = new RecolectorBE();
+            VideoBE item = new VideoBE();
 
             try
             {
@@ -127,30 +127,18 @@ namespace WSSCC2
 
                 while (dr.Read())
                 {
-                    item.IdRecolector = dr.GetInt32(dr.GetOrdinal("IdRecolector"));
-                    item.Titulo = dr.GetString(dr.GetOrdinal("Titulo"));
-                    item.Contenido = dr.GetString(dr.GetOrdinal("Contenido"));
-                    item.Fecha = dr.GetDateTime(dr.GetOrdinal("Fecha"));
-                    item.prioridad = dr.GetInt32(dr.GetOrdinal("prioridad"));
-                    item.Idseccion = dr.GetInt32(dr.GetOrdinal("Idseccion"));
-                    item.Nomreportero = dr.GetString(dr.GetOrdinal("NombreReportero"));
+                    item.idVideo = dr.GetInt32(dr.GetOrdinal("idVideo"));
+                    item.link = dr.GetString(dr.GetOrdinal("link"));
+                    item.descripcion = dr.GetString(dr.GetOrdinal("descripcion"));
 
-                    if (System.Convert.IsDBNull(dr["Idvideo"]))
-                    {
-                        item.Idvideo = 0;
-                    }
-                    else
-                    {
-                        item.Idvideo = dr.GetInt32(dr.GetOrdinal("Idvideo"));
-                    }
-                    if (System.Convert.IsDBNull(dr["Idimagen"]))
-                    {
-                        item.Idimagen = 0;
-                    }
-                    else
-                    {
-                        item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
-                    }
+                    //if (System.Convert.IsDBNull(dr["Idimagen"]))
+                    //{
+                    //    item.Idimagen = 0;
+                    //}
+                    //else
+                    //{
+                    //    item.Idimagen = dr.GetInt32(dr.GetOrdinal("Idimagen"));
+                    //}
                 }
 
                 dr.Close();
@@ -191,5 +179,12 @@ namespace WSSCC2
         public int Idimagen { get; set; }
         public int prioridad { get; set; }
 
+    }
+
+    public class VideoBE
+    {
+        public int idVideo { get; set; }
+        public string link { get; set; }
+        public string descripcion { get; set; }
     }
 }
