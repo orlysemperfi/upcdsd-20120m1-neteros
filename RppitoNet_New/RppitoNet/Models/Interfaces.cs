@@ -31,7 +31,7 @@ namespace RppitoNet.Models
          bool Distribucion(int pId_noticia);
          List<RNoticiaBE> Listado(string pFecha, string pTipo);
 
-         NoticiaBE RegistroRec(int pId_recolector);
+         //NoticiaBE RegistroRec(int pId_recolector);
     }
 
 }

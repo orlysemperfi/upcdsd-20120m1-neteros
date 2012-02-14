@@ -38,20 +38,27 @@
           <s:element minOccurs="1" maxOccurs="1" name="prioridad" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:element name="RegistroRecolector">
+      <s:element name="RegistroVideo">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="IdRecolector" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdVideo" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="RegistroRecolectorResponse">
+      <s:element name="RegistroVideoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="RegistroRecolectorResult" type="tns:RecolectorBE" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegistroVideoResult" type="tns:VideoBE" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="VideoBE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idVideo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="link" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ListadoRecolectorSoapIn">
@@ -60,20 +67,20 @@
   <wsdl:message name="ListadoRecolectorSoapOut">
     <wsdl:part name="parameters" element="tns:ListadoRecolectorResponse" />
   </wsdl:message>
-  <wsdl:message name="RegistroRecolectorSoapIn">
-    <wsdl:part name="parameters" element="tns:RegistroRecolector" />
+  <wsdl:message name="RegistroVideoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistroVideo" />
   </wsdl:message>
-  <wsdl:message name="RegistroRecolectorSoapOut">
-    <wsdl:part name="parameters" element="tns:RegistroRecolectorResponse" />
+  <wsdl:message name="RegistroVideoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistroVideoResponse" />
   </wsdl:message>
   <wsdl:portType name="recolectorSoap">
     <wsdl:operation name="ListadoRecolector">
       <wsdl:input message="tns:ListadoRecolectorSoapIn" />
       <wsdl:output message="tns:ListadoRecolectorSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="RegistroRecolector">
-      <wsdl:input message="tns:RegistroRecolectorSoapIn" />
-      <wsdl:output message="tns:RegistroRecolectorSoapOut" />
+    <wsdl:operation name="RegistroVideo">
+      <wsdl:input message="tns:RegistroVideoSoapIn" />
+      <wsdl:output message="tns:RegistroVideoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="recolectorSoap" type="tns:recolectorSoap">
@@ -87,8 +94,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RegistroRecolector">
-      <soap:operation soapAction="http://tempuri.org/RegistroRecolector" style="document" />
+    <wsdl:operation name="RegistroVideo">
+      <soap:operation soapAction="http://tempuri.org/RegistroVideo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -108,8 +115,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RegistroRecolector">
-      <soap12:operation soapAction="http://tempuri.org/RegistroRecolector" style="document" />
+    <wsdl:operation name="RegistroVideo">
+      <soap12:operation soapAction="http://tempuri.org/RegistroVideo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
