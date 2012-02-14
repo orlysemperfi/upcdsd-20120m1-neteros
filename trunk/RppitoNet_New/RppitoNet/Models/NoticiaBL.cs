@@ -8,41 +8,41 @@ namespace RppitoNet.Models
     public class NoticiaBL: INoticia
     {
 
-        public NoticiaBE RegistroRec(int pId_recolector)
-        {
-            NoticiaDL noticia = new NoticiaDL();
+        //public NoticiaBE RegistroRec(int pId_recolector)
+        //{
+        //    NoticiaDL noticia = new NoticiaDL();
 
-            recolector_ws.recolector recolector = new recolector_ws.recolector();
+        //    recolector_ws.recolector recolector = new recolector_ws.recolector();
 
-            recolector_ws.RecolectorBE item = new recolector_ws.RecolectorBE();
+        //    recolector_ws.RecolectorBE item = new recolector_ws.RecolectorBE();
 
-            item = recolector.RegistroRecolector(pId_recolector);
+        //    item = recolector.RegistroRecolector(pId_recolector);
 
-            NoticiaBE rgto = new NoticiaBE();
-            rgto.IdRecolector = item.IdRecolector;
-            rgto.Titulo = item.Titulo;
-            rgto.Contenido = item.Contenido;
-            rgto.Fecha = item.Fecha;
-            rgto.prioridad = item.prioridad;
-            if (item.Idseccion != 0)
-            {
-                rgto.Idseccion = item.Idseccion;
-            }
-            if (item.Idvideo != 0)
-            {
-                rgto.Idvideo = item.Idvideo;
-            }
-            if (item.Idimagen != 0)
-            {
-                rgto.Idimagen = item.Idimagen;
-            }
+        //    NoticiaBE rgto = new NoticiaBE();
+        //    rgto.IdRecolector = item.IdRecolector;
+        //    rgto.Titulo = item.Titulo;
+        //    rgto.Contenido = item.Contenido;
+        //    rgto.Fecha = item.Fecha;
+        //    rgto.prioridad = item.prioridad;
+        //    if (item.Idseccion != 0)
+        //    {
+        //        rgto.Idseccion = item.Idseccion;
+        //    }
+        //    if (item.Idvideo != 0)
+        //    {
+        //        rgto.Idvideo = item.Idvideo;
+        //    }
+        //    if (item.Idimagen != 0)
+        //    {
+        //        rgto.Idimagen = item.Idimagen;
+        //    }
 
-            //rgto.nomReportero = item.Nomreportero;
-            rgto.flg_publicado = false;
-            rgto.flg_twitter = false;
+        //    //rgto.nomReportero = item.Nomreportero;
+        //    rgto.flg_publicado = false;
+        //    rgto.flg_twitter = false;
 
-            return rgto;
-        }
+        //    return rgto;
+        //}
 
         public NoticiaBE Registro(int pId_noticia)
         {

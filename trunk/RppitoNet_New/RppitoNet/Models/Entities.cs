@@ -81,4 +81,11 @@ namespace RppitoNet.Models
         public string CoordY { get; set; }
     }
 
+    public class VideoBE
+    {
+        public int idVideo { get; set; }
+        public string link { get; set; }
+        public string descripcion { get; set; }
+    }
+
 }

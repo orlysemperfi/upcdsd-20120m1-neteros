@@ -122,18 +122,18 @@ namespace RppitoNet.Controllers
         //
         // GET: /Editar_Recolector/
 
-        public ActionResult Edit_Recolector(int id)
-        {
-            SeccionBL seccion = new SeccionBL();
-            ReporteroBL reportero = new ReporteroBL();
+        //public ActionResult Edit_Recolector(int id)
+        //{
+        //    SeccionBL seccion = new SeccionBL();
+        //    ReporteroBL reportero = new ReporteroBL();
 
-            var item = modelo.RegistroRec(id);
-            //ViewBag.Secciones = seccion.Listado().ToList();
-            ViewData["Secciones"] = seccion.Listado().ToList();
-            //ViewBag.Reporteros = reportero.Listado().ToList();
-            ViewData["Reporteros"] = reportero.Listado().ToList();
-            return View(item);
-        }
+        //    var item = modelo.RegistroRec(id);
+        //    //ViewBag.Secciones = seccion.Listado().ToList();
+        //    ViewData["Secciones"] = seccion.Listado().ToList();
+        //    //ViewBag.Reporteros = reportero.Listado().ToList();
+        //    ViewData["Reporteros"] = reportero.Listado().ToList();
+        //    return View(item);
+        //}
 
 
 
