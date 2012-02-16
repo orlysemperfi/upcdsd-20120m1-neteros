@@ -77,6 +77,8 @@ namespace RppitoNet.Models
         public bool Flg_publicado { get; set; }
         public bool Flg_twitter { get; set; }
         public int Prioridad { get; set; }
+        public string Estado { get; set; }
+        public string Nom_estado { get; set; }
         public string CoordX { get; set; }
         public string CoordY { get; set; }
     }
