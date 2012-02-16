@@ -7,6 +7,10 @@ using System.Web.Mvc;
 using RppitoNet.Models;
 using System.Messaging;
 using System.Threading;
+using System.Net;
+using System.IO;
+using System.Web.Script.Serialization;
+using System.Text;
 
 namespace RppitoNet.Controllers
 {
@@ -95,46 +99,71 @@ namespace RppitoNet.Controllers
         {
             try
             {
-                string rutaCola = ".\\private$\\" + "publicaciones" + "in";
-
-                if (!MessageQueue.Exists(rutaCola))
-                    MessageQueue.Create(rutaCola);
-
-                MessageQueue colaNeterosIn = new MessageQueue(rutaCola);
-
-                Message mensaje = new Message();
-                mensaje.Label = "Publicacion";
-                mensaje.Body = (NoticiaBE)entity;
-
-                colaNeterosIn.Send(mensaje);
 
 
-                ////Thread hilo = new Thread(new ThreadStart(new Lector(@".\private$\" + "publicaciones" + "out").Leer));
-                //Thread hilo = new Thread(new ThreadStart(new Lector(@".\private$\" + "publicaciones" + "in").Leer));
-                //hilo.Start();
+                //string rutaCola = ".\\private$\\" + "publicaciones" + "in";
 
-                return RedirectToAction("Index");
+                //if (!MessageQueue.Exists(rutaCola))
+                //    MessageQueue.Create(rutaCola);
 
-                // TODO: Add update logic here
+                //MessageQueue colaNeterosIn = new MessageQueue(rutaCola);
 
-               //if (modelo.Publicacion(entity.IdNoticia))
-               // {
-               //     return RedirectToAction("Index");
-               // }
-               // else
-               // {
-               //     //revisar como refrescar
-               //     SeccionBL seccion = new SeccionBL();
-               //     ReporteroBL reportero = new ReporteroBL();
+                //Message mensaje = new Message();
+                //mensaje.Label = "Publicacion";
+                //mensaje.Body = (NoticiaBE)entity;
 
-               //     var item = modelo.Registro(id);
-               //     //ViewBag.Secciones = seccion.Listado().ToList();
-               //     ViewData["Secciones"] = seccion.Listado().ToList();
-               //     //ViewBag.Reporteros = reportero.Listado().ToList();
-               //     ViewData["Reporteros"] = reportero.Listado().ToList();
+                //colaNeterosIn.Send(mensaje);
 
-               //     return View(entity);
-               // }
+                bool rptaObtenidaG = false;
+
+                //REST
+                string postdata = "{\"IdNoticia\":\""+ id.ToString().Trim() +"\"}"; //JSON
+                byte[] data = Encoding.UTF8.GetBytes(postdata);
+                HttpWebRequest reqP = (HttpWebRequest)WebRequest
+                .Create("http://localhost:41460/AccionService.svc/Noticia");
+                reqP.Method = "POST";
+                reqP.ContentLength = data.Length;
+                reqP.ContentType = "application/json";
+                var reqStream = reqP.GetRequestStream();
+                reqStream.Write(data, 0, data.Length);
+                HttpWebResponse resP = (HttpWebResponse)reqP.GetResponse();
+                StreamReader readerP = new StreamReader(resP.GetResponseStream());
+                string rptaJsonP = readerP.ReadToEnd();
+                JavaScriptSerializer jsP = new JavaScriptSerializer();
+                bool rptaObtenidaP = jsP.Deserialize<bool>(rptaJsonP);
+
+                if (rptaObtenidaP)
+                {
+                    HttpWebRequest reqG = (HttpWebRequest)WebRequest
+                    .Create("http://localhost:41460/AccionService.svc/Noticia");
+                    reqG.Method = "GET";
+                    HttpWebResponse resG = (HttpWebResponse)reqG.GetResponse();
+                    StreamReader readerG = new StreamReader(resG.GetResponseStream());
+                    string rptaJsonG = readerG.ReadToEnd();
+                    JavaScriptSerializer jsG = new JavaScriptSerializer();
+                    rptaObtenidaG = jsG.Deserialize<bool>(rptaJsonG);
+                }
+
+
+                //if (modelo.Publicacion(entity.IdNoticia))
+                if (rptaObtenidaG)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    //revisar como refrescar
+                    SeccionBL seccion = new SeccionBL();
+                    ReporteroBL reportero = new ReporteroBL();
+
+                    var item = modelo.Registro(id);
+                    //ViewBag.Secciones = seccion.Listado().ToList();
+                    ViewData["Secciones"] = seccion.Listado().ToList();
+                    //ViewBag.Reporteros = reportero.Listado().ToList();
+                    ViewData["Reporteros"] = reportero.Listado().ToList();
+
+                    return View(entity);
+                }
             }
             catch
             {
