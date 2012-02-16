@@ -74,7 +74,7 @@
             Reportero
         </th>
         <th>
-            Flg_publicado
+            Estado
         </th>
         <th>
             Flg_twitter
@@ -106,7 +106,7 @@
             <%: Html.DisplayFor(modelItem => item.Reportero) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Flg_publicado) %>
+            <%: Html.DisplayFor(modelItem => item.Nom_estado) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Flg_twitter) %>
