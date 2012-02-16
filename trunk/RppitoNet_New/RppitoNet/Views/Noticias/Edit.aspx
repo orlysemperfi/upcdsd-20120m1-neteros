@@ -43,14 +43,17 @@
                 <%: Html.ValidationMessageFor(model => model.Contenido) %>
             </div>
             
+<%--             RLG 15-02-12
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.TipoVista) %>
             </div>
+--%>         
+<%-- 
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.TipoVista) %>
                 <%: Html.ValidationMessageFor(model => model.TipoVista) %>
             </div>
-            
+--%>            
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Idseccion) %>
             </div>
