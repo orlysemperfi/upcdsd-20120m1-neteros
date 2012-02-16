@@ -137,7 +137,10 @@
             </div>
             
             <p>
+            <% var item = Model;
+                if (item.flg_publicado == false) { %>
                 <input type="submit" value="Publicar" />
+            <% } %>
             </p>
         </fieldset>
     <% } %>
