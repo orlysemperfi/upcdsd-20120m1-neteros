@@ -7,6 +7,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 
+    <form id="form1" runat="server">
+
+
     <h2>Distribución Twitter</h2>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
@@ -42,7 +45,10 @@
             <td style="width: 111px">
                 &nbsp;</td>
             <td>
-                &nbsp;</td>
+                <asp:HyperLink ID="HyperLink1" runat="server" 
+                    NavigateUrl="https://twitter.com/?iid=am-1618412813283041923867072&amp;nid=15&amp;uid=482395533&amp;utm_content=profile#!/Xpptio2012" 
+                    Target="_blank">Cuenta Twitter</asp:HyperLink>
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -117,6 +123,8 @@
 
 </table>
     <% } %>
+
+    </form>
 
 </asp:Content>
 
