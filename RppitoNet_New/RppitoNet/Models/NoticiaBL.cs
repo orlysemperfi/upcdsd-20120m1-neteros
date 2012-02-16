@@ -8,42 +8,43 @@ namespace RppitoNet.Models
     public class NoticiaBL: INoticia
     {
 
-        //public NoticiaBE RegistroRec(int pId_recolector)
-        //{
-        //    NoticiaDL noticia = new NoticiaDL();
 
-        //    recolector_ws.recolector recolector = new recolector_ws.recolector();
+        public NoticiaBE RegistroRec(int pId_recolector)
+        {
+            NoticiaDL noticia = new NoticiaDL();
 
-        //    recolector_ws.RecolectorBE item = new recolector_ws.RecolectorBE();
+            recolector_ws.recolector recolector = new recolector_ws.recolector();
 
-        //    item = recolector.RegistroRecolector(pId_recolector);
+            recolector_ws.RecolectorBE item = new recolector_ws.RecolectorBE();
 
-        //    NoticiaBE rgto = new NoticiaBE();
-        //    rgto.IdRecolector = item.IdRecolector;
-        //    rgto.Titulo = item.Titulo;
-        //    rgto.Contenido = item.Contenido;
-        //    rgto.Fecha = item.Fecha;
-        //    rgto.prioridad = item.prioridad;
-        //    if (item.Idseccion != 0)
-        //    {
-        //        rgto.Idseccion = item.Idseccion;
-        //    }
-        //    if (item.Idvideo != 0)
-        //    {
-        //        rgto.Idvideo = item.Idvideo;
-        //    }
-        //    if (item.Idimagen != 0)
-        //    {
-        //        rgto.Idimagen = item.Idimagen;
-        //    }
+            item = recolector.RegistroRecolector(pId_recolector);
 
-        //    //rgto.nomReportero = item.Nomreportero;
-        //    rgto.flg_publicado = false;
-        //    rgto.flg_twitter = false;
+            NoticiaBE rgto = new NoticiaBE();
+            rgto.IdRecolector = item.IdRecolector;
+            rgto.Titulo = item.Titulo;
+            rgto.Contenido = item.Contenido;
+            rgto.Fecha = item.Fecha;
+            rgto.prioridad = item.prioridad;
+            if (item.Idseccion != 0)
+            {
+                rgto.Idseccion = item.Idseccion;
+            }
+            if (item.Idvideo != 0)
+            {
+                rgto.Idvideo = item.Idvideo;
+            }
+            if (item.Idimagen != 0)
+            {
+                rgto.Idimagen = item.Idimagen;
+            }
 
-        //    return rgto;
-        //}
+            //rgto.nomReportero = item.Nomreportero;
+            rgto.flg_publicado = false;
+            rgto.flg_twitter = false;
 
+            return rgto;
+        }
+   
         public NoticiaBE Registro(int pId_noticia)
         {
             NoticiaDL noticia = new NoticiaDL();
