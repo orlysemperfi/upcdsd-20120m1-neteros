@@ -62,10 +62,10 @@ namespace RppitoNet.Models
             SeccionBL seccion = new SeccionBL();
             ReporteroBL reportero = new ReporteroBL();
 
-            Int32 max_rec = noticia.MaxRecolector();
-
             if (pTipo == "T")
             {
+                Int32 max_rec = noticia.MaxRecolector();
+
                 recolector_ws.recolector recolector = new recolector_ws.recolector();
                 NoticiaBE rgto = new NoticiaBE();
 
