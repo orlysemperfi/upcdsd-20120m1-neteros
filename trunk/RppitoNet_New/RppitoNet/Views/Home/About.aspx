@@ -23,11 +23,11 @@
         </b>
     <br />
     <br />
-    Franco Encalada Vega&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - U201114916
+    Julio Salvatierra Barrientos&nbsp;&nbsp;&nbsp;&nbsp; - U201021083
     <br />
     Rodolfo Laredo Gomez&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - U921131
     <br />
-    Julio Salvatierra Barrientos&nbsp;&nbsp;&nbsp;&nbsp; - U201021083
+    Franco Encalada Vega&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - U201114916
     <br />
     Miguel Angel Valer Flores&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	    - U921318
     <br />
