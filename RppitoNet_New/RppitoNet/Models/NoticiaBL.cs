@@ -92,27 +92,6 @@ namespace RppitoNet.Models
                         throw new Exception("Error al agregar datos del recolector");
                     }
 
-                    //RNoticiaBE result = resultado.Find(
-                    //delegate(RNoticiaBE bk)
-                    //{
-                    //    return bk.IdRecolector == item.IdRecolector;
-                    //}
-                    //);
-                    //if (result == null)
-                    //{
-                    //    RNoticiaBE rgto = new RNoticiaBE();
-                    //    rgto.IdRecolector = item.IdRecolector;
-                    //    rgto.Titulo = item.Titulo;
-                    //    rgto.Fecha = item.Fecha;
-                    //    rgto.Prioridad = item.prioridad;
-                    //    rgto.Seccion = seccion.Registro(item.Idseccion).Nombre;
-                    //    rgto.Reportero = item.Nomreportero;
-                    //    rgto.Flg_publicado = false;
-                    //    rgto.Flg_twitter = false;
-
-                    //    resultado.Add(rgto);
-                    //}
-
                 }            
             }
 
