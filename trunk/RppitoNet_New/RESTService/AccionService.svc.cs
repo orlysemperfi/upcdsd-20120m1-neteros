@@ -44,5 +44,31 @@ namespace RESTService
             }
 
         }
+
+
+        public bool enviaPublicacion(NoticiaBE pNoticia)
+        {
+            string rutaCola = ".\\private$\\" + "publicaciones" + "in";
+
+            try
+            {
+                if (!MessageQueue.Exists(rutaCola))
+                    MessageQueue.Create(rutaCola);
+
+                MessageQueue colaNeterosIn = new MessageQueue(rutaCola);
+
+                Message mensaje = new Message();
+                mensaje.Label = "Publicacion";
+                mensaje.Body = (NoticiaBE)pNoticia;
+
+                colaNeterosIn.Send(mensaje);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
