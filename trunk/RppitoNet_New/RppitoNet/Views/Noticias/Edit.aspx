@@ -105,7 +105,9 @@
                 <%: Html.EditorFor(model => model.flg_req_mapa)%>
                 <%: Html.ValidationMessageFor(model => model.flg_req_mapa) %>
             </div>
-            
+
+
+<%--     rlg
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.flg_mapa) %>
             </div>
@@ -113,7 +115,7 @@
                 <%: Html.EditorFor(model => model.flg_mapa)%>
                 <%: Html.ValidationMessageFor(model => model.flg_mapa) %>
             </div>
-            
+--%>            
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.flg_publicado) %>
             </div>
@@ -121,7 +123,8 @@
                 <%: Html.EditorFor(model => model.flg_publicado, new { @disabled = "true"})%>
                 <%: Html.ValidationMessageFor(model => model.flg_publicado) %>
             </div>
-            
+
+
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.flg_twitter) %>
             </div>
@@ -129,7 +132,7 @@
                 <%: Html.EditorFor(model => model.flg_twitter)%>
                 <%: Html.ValidationMessageFor(model => model.flg_twitter) %>
             </div>
-           
+
 
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.prioridad) %>
