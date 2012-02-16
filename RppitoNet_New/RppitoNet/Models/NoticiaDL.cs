@@ -351,6 +351,8 @@ namespace RppitoNet.Models
                     item.Reportero = dr.GetString(dr.GetOrdinal("Reportero"));
                     item.Flg_publicado = dr.GetBoolean(dr.GetOrdinal("Flg_publicado"));
                     item.Flg_twitter = dr.GetBoolean(dr.GetOrdinal("Flg_twitter"));
+                    item.Estado = dr.GetString(dr.GetOrdinal("estado"));
+                    item.Nom_estado = dr.GetString(dr.GetOrdinal("nom_estado"));
 
                     lista.Add(item);
                 }
