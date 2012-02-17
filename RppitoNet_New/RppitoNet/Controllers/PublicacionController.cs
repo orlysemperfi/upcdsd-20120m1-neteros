@@ -19,7 +19,6 @@ namespace RppitoNet.Controllers
 
         NoticiaBL modelo = new NoticiaBL();
 
-
         //
         // GET: /Publicacion/
 

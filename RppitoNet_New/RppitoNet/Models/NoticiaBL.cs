@@ -8,7 +8,6 @@ namespace RppitoNet.Models
     public class NoticiaBL: INoticia
     {
 
-
         public NoticiaBE RegistroRec(int pId_recolector)
         {
             NoticiaDL noticia = new NoticiaDL();
