@@ -1,0 +1,7 @@
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RESTService\bin\RESTService.dll
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RESTService\bin\RESTService.pdb
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RESTService\bin\RppitoNet.dll
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RESTService\bin\RppitoNet.pdb
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RESTService\obj\Debug\ResolveAssemblyReference.cache
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RESTService\obj\Debug\RESTService.dll
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RESTService\obj\Debug\RESTService.pdb
