@@ -17,6 +17,8 @@ namespace RppitoNet.Controllers
     public class PublicacionController : Controller
     {
 
+
+
         NoticiaBL modelo = new NoticiaBL();
 
         //
