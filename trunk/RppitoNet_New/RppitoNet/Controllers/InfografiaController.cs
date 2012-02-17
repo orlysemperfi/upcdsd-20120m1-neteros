@@ -48,7 +48,7 @@ namespace RppitoNet.Controllers
         public ActionResult Create()
         {
             return View();
-        } 
+        }
 
         //
         // POST: /Infografia/Create
@@ -67,10 +67,10 @@ namespace RppitoNet.Controllers
                 return View();
             }
         }
-        
+
         //
         // GET: /Infografia/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             SeccionBL seccion = new SeccionBL();
@@ -134,7 +134,7 @@ namespace RppitoNet.Controllers
 
         //
         // GET: /Infografia/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
             return View();
@@ -149,7 +149,7 @@ namespace RppitoNet.Controllers
             try
             {
                 // TODO: Add delete logic here
- 
+
                 return RedirectToAction("Index");
             }
             catch

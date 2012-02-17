@@ -11,16 +11,21 @@
 
 
     <table style="width:100%;">
-        
         <tr>
             <td style="width: 57px">
-                Estado</td>
+                &nbsp;</td>
             <td style="width: 111px">
-            <select id= "cboEstado" >
-                <option value="0">Pendiente</option>
-                <option value="1">Mapeado</option>
-            </select>
-            
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 57px">
+                Fecha</td>
+            <td style="width: 111px">
+            <%= Html.TextBox("txtFecha", DateTime.Now.ToString("dd'/'MM'/'yyyy") )%> 
             </td>
             <td>
                
@@ -63,13 +68,13 @@
             Reportero
         </th>
         <th>
-            CoordX
+            Flg_publicado
         </th>
         <th>
-            CoordY
+            Flg_twitter
         </th>
         <th>
-            Flg_Mapeado
+            Prioridad
         </th>
         <th></th>
     </tr>
@@ -95,7 +100,7 @@
             <%: Html.DisplayFor(modelItem => item.Reportero) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.) %>
+            <%: Html.DisplayFor(modelItem => item.Flg_publicado) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Flg_twitter) %>
@@ -104,7 +109,7 @@
             <%: Html.DisplayFor(modelItem => item.Prioridad) %>
         </td>
         <td>
-            <%: Html.ActionLink("Mapear", "Edit", new { id = item.IdNoticia })%>
+            <%: Html.ActionLink("Edit", "Edit", new { id = item.IdNoticia })%>
         </td>
     </tr>
 <% } %>

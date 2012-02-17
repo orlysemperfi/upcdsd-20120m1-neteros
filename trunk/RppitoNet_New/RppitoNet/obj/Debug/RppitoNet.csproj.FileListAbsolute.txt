@@ -23,3 +23,8 @@ D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv4\Rppito
 D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv4\RppitoNet_New\RppitoNet\obj\Debug\ResolveAssemblyReference.cache
 D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv4\RppitoNet_New\RppitoNet\obj\Debug\RppitoNet.dll
 D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv4\RppitoNet_New\RppitoNet\obj\Debug\RppitoNet.pdb
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RppitoNet\bin\RppitoNet.dll
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RppitoNet\bin\RppitoNet.pdb
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RppitoNet\obj\Debug\ResolveAssemblyReference.cache
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RppitoNet\obj\Debug\RppitoNet.dll
+D:\JSalvatierra\UPC\VI ciclo\Sistema Distribuidos\trabajo\proyecto\proyv5\RppitoNet_New\RppitoNet\obj\Debug\RppitoNet.pdb

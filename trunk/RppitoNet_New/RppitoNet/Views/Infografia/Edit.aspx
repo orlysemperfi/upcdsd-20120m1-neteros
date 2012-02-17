@@ -36,15 +36,110 @@
                 <%: Html.ValidationMessageFor(model => model.Titulo) %>
             </div>
             
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Contenido) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextAreaFor(model => model.Contenido, new { cols=100, rows=5 }) %>
+                <%: Html.ValidationMessageFor(model => model.Contenido) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.TipoVista) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.TipoVista) %>
+                <%: Html.ValidationMessageFor(model => model.TipoVista) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Idseccion) %>
+            </div>
+            <div class="editor-field">
+<%--                <%: Html.TextBoxFor(model => model.Idseccion) %>
+                <%: Html.ValidationMessageFor(model => model.Idseccion) %>--%>
+                <%: @Html.DropDownList("Idseccion", new SelectList((System.Collections.IEnumerable)ViewData["Secciones"], "IdSeccion", "Nombre", Model.Idseccion))%>
+            </div>
+            
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Fecha) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Fecha, String.Format("{0:g}", Model.Fecha)) %>
+                <%: Html.ValidationMessageFor(model => model.Fecha) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Idreportero) %>
+            </div>
+            <div class="editor-field">
+<%--                <%: Html.TextBoxFor(model => model.Idreportero) %>
+                <%: Html.ValidationMessageFor(model => model.Idreportero) %>
+--%>                
+                <%: @Html.DropDownList("Idreportero", new SelectList((System.Collections.IEnumerable)ViewData["Reporteros"], "IdReportero", "Nombre", Model.Idreportero))%>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Idvideo) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Idvideo) %>
+                <%: Html.ValidationMessageFor(model => model.Idvideo) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Idimagen) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Idimagen) %>
+                <%: Html.ValidationMessageFor(model => model.Idimagen) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.flg_req_mapa) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.flg_req_mapa)%>
+                <%: Html.ValidationMessageFor(model => model.flg_req_mapa) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.flg_mapa) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.flg_mapa)%>
+                <%: Html.ValidationMessageFor(model => model.flg_mapa) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.flg_publicado) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.flg_publicado, new { disabled = "true" })%>
+                <%: Html.ValidationMessageFor(model => model.flg_publicado) %>
+            </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.flg_twitter) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.flg_twitter)%>
+                <%: Html.ValidationMessageFor(model => model.flg_twitter) %>
+            </div>
+           
+
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.prioridad) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.prioridad) %>
+                <%: Html.ValidationMessageFor(model => model.prioridad) %>
+            </div>
             
             <p>
                 <input type="submit" value="Grabar" />
             </p>
-
-            <p>
-                <input type="submit" value="Cerrar Infografia" />
-            </p>
-
         </fieldset>
     <% } %>
     <p>
